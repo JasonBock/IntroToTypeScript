@@ -35,15 +35,21 @@ class TheRealAnswer extends TheAnswer {
 	}
 	
 	stateWithName(name : string) {
-		return `${super.state()} , ${name}`;
+		return `${super.state()}, ${name}`;
 	}
 }
 
-var answer = new TheAnswer();
-alert(answer.state());
+class Program {
+    public static Main() {
+        var answer = new TheAnswer();
+        console.log(answer.state());
 
-var myAnswer = new TheAnswer(43);
-alert(myAnswer.state());
+        var myAnswer = new TheAnswer(43);
+        console.log(myAnswer.state());
 
-var realAnswer = new TheRealAnswer();
-alert(realAnswer.stateWithName("Jason"));
+        var realAnswer = new TheRealAnswer();
+        console.log(realAnswer.stateWithName("Jason"));
+    }    
+}
+
+Program.Main();
