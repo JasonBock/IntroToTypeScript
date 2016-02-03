@@ -1,8 +1,8 @@
-module InternalMessages {
-	export const Answer = "The answer is";
+export module ExternalMessages {
+	export const Answer = "The external answer is";
 }
 
-module InternalAnswers {
+export module ExternalAnswers {
     export class TheAnswer {
         private _value : number;
         
@@ -11,7 +11,7 @@ module InternalAnswers {
         }
 
         state() {
-            return `${InternalMessages.Answer} ${this._value}`;
+            return `${ExternalMessages.Answer} ${this._value}`;
         }	
         
         get value() {

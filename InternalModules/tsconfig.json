@@ -1,13 +1,12 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "amd",
+        "module": "commonjs",
         "sourceMap": true,
-        "outFile": "Modules.js"
+        "outFile": "InternalModules.js"
     },
     "files": [
         "InternalAnswers.ts",
-        "ExternalAnswers.ts",
         "Program.ts"
     ]
 }

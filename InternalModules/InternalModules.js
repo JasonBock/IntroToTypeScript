@@ -1,6 +1,6 @@
 var InternalMessages;
 (function (InternalMessages) {
-    InternalMessages.Answer = "The answer is";
+    InternalMessages.Answer = "The internal answer is";
 })(InternalMessages || (InternalMessages = {}));
 var InternalAnswers;
 (function (InternalAnswers) {
@@ -33,4 +33,4 @@ var Program = (function () {
     return Program;
 })();
 Program.Main();
-//# sourceMappingURL=Modules.js.map
+//# sourceMappingURL=InternalModules.js.map
