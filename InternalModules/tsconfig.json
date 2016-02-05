@@ -3,10 +3,10 @@
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true,
-        "outFile": "InternalModules.js"
+        "outFile": "Program.js"
     },
     "files": [
         "InternalAnswers.ts",
-        "Program.ts"
+        "InternalProgram.ts"
     ]
 }

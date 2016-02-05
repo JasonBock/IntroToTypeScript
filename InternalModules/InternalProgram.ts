@@ -2,7 +2,7 @@
 
 class Program {
     public static Main() {
-        var answer = new InternalAnswers.TheAnswer();
+        let answer = new InternalAnswers.TheAnswer();
         console.log(answer.state());
     }
 }
