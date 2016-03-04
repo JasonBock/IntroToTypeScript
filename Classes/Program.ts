@@ -8,17 +8,17 @@ interface IAnswer {
 
 class TheAnswer implements IAnswer {
 	protected _value : number;
+	
+	constructor(value? : number) {
+		this._value = value == null ? 41 : value;
+	}
 
-	// You can't do this.
+	// You can't add this.
 	/*
 	constructor() {
 		this.value = 44;
 	}
 	*/
-	
-	constructor(value? : number) {
-		this._value = value == null ? 41 : value;
-	}
 
 	state() {
 		return `${Messages.Answer} ${this._value}`;
@@ -36,6 +36,29 @@ class TheRealAnswer extends TheAnswer {
 	
 	stateWithName(name : string) {
 		return `${super.state()}, ${name}`;
+	}
+}
+
+class TheOverlaodedAnswer {
+	protected _value : number;
+
+	constructor(value : number) {
+        this._value = value;
+	}
+	
+    state(isGood : boolean) : string;
+    state(name : string) : string;
+
+	state(value : boolean | string) {
+        if(typeof value == "boolean") {
+    		return `${this._value}, ${value} - boolean`;
+        }
+        else if(typeof value == "string") {
+    		return `${this._value}, ${value} - string`;
+        }
+        else {
+            throw new Error("Unsupported type.");
+        }
 	}
 }
 
@@ -87,6 +110,11 @@ class Program {
 
         let realAnswer = new TheRealAnswer();
         console.log(realAnswer.stateWithName("Jason"));
+
+        // Intellisense picks up the overload
+        let overloadedAnswer = new TheOverlaodedAnswer(40);
+        console.log(overloadedAnswer.state(true));
+        console.log(overloadedAnswer.state("Jason"));
 
         let mixedAnswer = new TheMixedAnswer();
         console.log(mixedAnswer.state());
