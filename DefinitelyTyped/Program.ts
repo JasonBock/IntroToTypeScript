@@ -2,7 +2,10 @@
 
 "use strict";
 
-import moment = require("moment");
+// Visit https://www.npmjs.com/package/typings and 
+// https://github.com/typings/typings for all the typings details
+
+import * as moment from "moment";
 
 class Program {
     public static Main() {
