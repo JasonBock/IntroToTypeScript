@@ -1,0 +1,10 @@
+{
+  "name": "VSAndNode",
+  "version": "0.0.0",
+  "description": "VSAndNode",
+  "main": "app.js",
+  "author": {
+    "name": "JasonB",
+    "email": ""
+  }
+}

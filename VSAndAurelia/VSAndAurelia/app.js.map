@@ -1,0 +1,1 @@
+{"version":3,"file":"app.js","sourceRoot":"","sources":["app.ts"],"names":["TheAnswer","TheAnswer.constructor","TheAnswer.value"],"mappings":"AAAA;IAGCA;QACCC,IAAIA,CAACA,MAAMA,GAAGA,EAAEA,CAACA;IAClBA,CAACA;IAEDD,sBAAIA,4BAAKA;aAATA;YACCE,MAAMA,CAACA,IAAIA,CAACA,MAAMA,CAACA;QACpBA,CAACA;;;OAAAF;IACFA,gBAACA;AAADA,CAACA,AAVD,IAUC;AAVY,iBAAS,YAUrB,CAAA"}
