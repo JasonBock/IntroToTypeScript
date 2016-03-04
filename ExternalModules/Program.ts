@@ -1,9 +1,14 @@
-import answers = require("./ExternalAnswers");
+import requireAnswers = require("./ExternalAnswers");
+
+import * as moduleAnswers from "./ExternalAnswers";
 
 class Program {
     public static Main() {
-        let answer = new answers.ExternalAnswers.TheAnswer();
-        console.log(answer.state());
+        let requireAnswer = new requireAnswers.ExternalAnswers.TheAnswer();
+        console.log(`requireAnswer is ${requireAnswer.state()}`);
+        
+        let moduleAnsewr = new moduleAnswers.ExternalAnswers.TheAnswer();
+        console.log(`moduleAnsewr is ${moduleAnsewr.state()}`);        
     }
 }
 

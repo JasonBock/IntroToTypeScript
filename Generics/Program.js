@@ -7,6 +7,9 @@ var GenericAnswer = (function () {
     function GenericAnswer(value) {
         this._value = value;
     }
+    GenericAnswer.prototype.state = function () {
+        return "Your generic answer is " + this._value;
+    };
     Object.defineProperty(GenericAnswer.prototype, "Value", {
         get: function () {
             return this._value;
@@ -40,15 +43,23 @@ var Program = (function () {
     function Program() {
     }
     Program.Main = function () {
-        var numberAnswer = new NumberAnswer(43);
-        console.log(numberAnswer.Value);
         var stringAnswer = new GenericAnswer("44");
-        console.log(stringAnswer.Value);
+        Program.PrintAnswer(stringAnswer);
+        var numberAnswer = new NumberAnswer(43);
+        Program.PrintAnswer(numberAnswer);
         var newAnswer = Program.CreateNewAnswer(RandomAnswer);
         console.log(newAnswer.Value);
+        // Can't do this:
+        // Program.CreateNewAnswer(NumberAnswer);
+        // Or this:
+        // Program.PrintAnswer(newAnswer);
     };
     Program.CreateNewAnswer = function (a) {
         return new a();
+    };
+    Program.PrintAnswer = function (answer) {
+        console.log(answer.state());
+        return answer.Value;
     };
     return Program;
 })();
