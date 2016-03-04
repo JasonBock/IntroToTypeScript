@@ -10,8 +10,8 @@ for (var i in answers) {
 }
 console.log();
 console.log("for..of loop approach...");
-for (var _i = 0; _i < answers.length; _i++) {
-    var i = answers[_i];
+for (var _i = 0, answers_1 = answers; _i < answers_1.length; _i++) {
+    var i = answers_1[_i];
     console.log(i);
 }
 //# sourceMappingURL=Program.js.map
