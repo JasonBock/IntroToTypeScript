@@ -1,4 +1,4 @@
-module Messages {
+namespace Messages {
 	export const Answer = "The answer is";
 }
 
@@ -39,7 +39,7 @@ class TheRealAnswer extends TheAnswer {
 	}
 }
 
-class TheOverlaodedAnswer {
+class TheOverloadedAnswer {
 	protected _value : number;
 
 	constructor(value : number) {
@@ -112,10 +112,9 @@ class Program {
         console.log(realAnswer.stateWithName("Jason"));
 
         // Intellisense picks up the overload
-        let overloadedAnswer = new TheOverlaodedAnswer(40);
+        let overloadedAnswer = new TheOverloadedAnswer(40);
         console.log(overloadedAnswer.state(true));
         console.log(overloadedAnswer.state("Jason"));
-
         let mixedAnswer = new TheMixedAnswer();
         console.log(mixedAnswer.state());
     }    

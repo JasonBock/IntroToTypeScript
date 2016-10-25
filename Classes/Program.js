@@ -39,11 +39,11 @@ var TheRealAnswer = (function (_super) {
     };
     return TheRealAnswer;
 }(TheAnswer));
-var TheOverlaodedAnswer = (function () {
-    function TheOverlaodedAnswer(value) {
+var TheOverloadedAnswer = (function () {
+    function TheOverloadedAnswer(value) {
         this._value = value;
     }
-    TheOverlaodedAnswer.prototype.state = function (value) {
+    TheOverloadedAnswer.prototype.state = function (value) {
         if (typeof value == "boolean") {
             return this._value + ", " + value + " - boolean";
         }
@@ -54,7 +54,7 @@ var TheOverlaodedAnswer = (function () {
             throw new Error("Unsupported type.");
         }
     };
-    return TheOverlaodedAnswer;
+    return TheOverloadedAnswer;
 }());
 var TheRandomAnswer = (function () {
     function TheRandomAnswer() {
@@ -95,7 +95,7 @@ var Program = (function () {
         var realAnswer = new TheRealAnswer();
         console.log(realAnswer.stateWithName("Jason"));
         // Intellisense picks up the overload
-        var overloadedAnswer = new TheOverlaodedAnswer(40);
+        var overloadedAnswer = new TheOverloadedAnswer(40);
         console.log(overloadedAnswer.state(true));
         console.log(overloadedAnswer.state("Jason"));
         var mixedAnswer = new TheMixedAnswer();

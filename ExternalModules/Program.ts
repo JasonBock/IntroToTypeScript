@@ -7,8 +7,8 @@ class Program {
         let requireAnswer = new requireAnswers.ExternalAnswers.TheAnswer();
         console.log(`requireAnswer is ${requireAnswer.state()}`);
         
-        let moduleAnsewr = new moduleAnswers.ExternalAnswers.TheAnswer();
-        console.log(`moduleAnsewr is ${moduleAnsewr.state()}`);        
+        let moduleAnswer = new moduleAnswers.ExternalAnswers.TheAnswer();
+        console.log(`moduleAnswer is ${moduleAnswer.state()}`);        
     }
 }
 

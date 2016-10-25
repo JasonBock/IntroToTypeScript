@@ -18,7 +18,7 @@ var GenericAnswer = (function () {
         configurable: true
     });
     return GenericAnswer;
-})();
+}());
 var RandomAnswer = (function () {
     function RandomAnswer() {
         this._value = Math.random();
@@ -31,14 +31,14 @@ var RandomAnswer = (function () {
         configurable: true
     });
     return RandomAnswer;
-})();
+}());
 var NumberAnswer = (function (_super) {
     __extends(NumberAnswer, _super);
     function NumberAnswer() {
         _super.apply(this, arguments);
     }
     return NumberAnswer;
-})(GenericAnswer);
+}(GenericAnswer));
 var Program = (function () {
     function Program() {
     }
@@ -49,7 +49,7 @@ var Program = (function () {
         Program.PrintAnswer(numberAnswer);
         var newAnswer = Program.CreateNewAnswer(RandomAnswer);
         console.log(newAnswer.Value);
-        // Can't do this:
+        // Can't do this - no no-arg constructor:
         // Program.CreateNewAnswer(NumberAnswer);
         // Or this:
         // Program.PrintAnswer(newAnswer);
@@ -62,6 +62,6 @@ var Program = (function () {
         return answer.Value;
     };
     return Program;
-})();
+}());
 Program.Main();
 //# sourceMappingURL=Program.js.map

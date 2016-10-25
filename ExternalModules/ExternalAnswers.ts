@@ -7,7 +7,7 @@ export module ExternalAnswers {
         private _value : number;
         
         constructor(value? : number) {
-            this._value = value == null ? 41 : value;
+            this._value = value === undefined ? 41 : value;
         }
 
         state() {

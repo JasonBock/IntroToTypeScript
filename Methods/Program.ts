@@ -52,6 +52,13 @@ printStringAnswers("RightAnswer");
 // Can't do this, you'll get a weird compiler error.
 // printStringAnswers("SomeOtherAnswer");
 
+var nonNullValue = "answer";
+// Can't do this when "strictNullChecks": true in tsconfig.json
+// nonNullValue = null;
+
+var nullOrValue : string | null = "answer";
+nullOrValue = null;
+
 console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
 console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 

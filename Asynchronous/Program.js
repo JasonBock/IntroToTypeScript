@@ -13,7 +13,7 @@ var Messages;
 })(Messages || (Messages = {}));
 class TheAsynchronousAnswer {
     constructor(value) {
-        this._value = value == null ? 41 : value;
+        this._value = value === undefined ? 41 : value;
     }
     state() {
         return __awaiter(this, void 0, void 0, function* () {

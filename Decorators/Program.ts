@@ -1,10 +1,10 @@
 "use strict";
 
 function freezable<TFunction extends Function>(target: TFunction) : TFunction {
-  var original = target;
+  let original = target;
 
   function construct(constructor, args) {
-    var c : any = function () {
+    let c : any = function () {
       return constructor.apply(this, args);
     }
     c.prototype = constructor.prototype;
@@ -28,10 +28,10 @@ class Program {
     public static Main() {
         let unfrozen : any = new UnfrozenAnswer();
         let frozen : any = new FrozenAnswer();
-        
+
         unfrozen.qqq = "a";
-        frozen.qqq = "a";        
-    }    
+        frozen.qqq = "a";
+    }
 }
 
 Program.Main();

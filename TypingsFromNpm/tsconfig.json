@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "declaration": true,
+        "target": "es6",
         "module": "commonjs",
-        "sourceMap": true,
-        "strictNullChecks": true
+        "sourceMap": true
     },
     "files": [
         "Program.ts"

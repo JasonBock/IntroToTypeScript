@@ -8,10 +8,10 @@ function fragile(value) {
     if (value < 0) {
         throw new RangeError("Cannot be less than 0.");
     }
-    else if (value % 2 == 0) {
+    else if (value % 2 === 0) {
         throw new EvenError("Even values are horrible!");
     }
-    else if (value == 3) {
+    else if (value === 3) {
         throw new Error();
     }
 }

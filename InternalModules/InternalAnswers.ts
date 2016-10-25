@@ -1,8 +1,8 @@
-module InternalMessages {
+namespace InternalMessages {
 	export const Answer = "The internal answer is";
 }
 
-module InternalAnswers {
+namespace InternalAnswers {
     export class TheAnswer {
         private _value : number;
         

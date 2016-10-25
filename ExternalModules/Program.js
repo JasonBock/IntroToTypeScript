@@ -7,8 +7,8 @@ var Program = (function () {
     Program.Main = function () {
         var requireAnswer = new requireAnswers.ExternalAnswers.TheAnswer();
         console.log("requireAnswer is " + requireAnswer.state());
-        var moduleAnsewr = new moduleAnswers.ExternalAnswers.TheAnswer();
-        console.log("moduleAnsewr is " + moduleAnsewr.state());
+        var moduleAnswer = new moduleAnswers.ExternalAnswers.TheAnswer();
+        console.log("moduleAnswer is " + moduleAnswer.state());
     };
     return Program;
 }());

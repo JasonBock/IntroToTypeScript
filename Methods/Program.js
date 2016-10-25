@@ -41,7 +41,7 @@ function printStringAnswers(answer) {
 printStringAnswers("WrongAnswer");
 printStringAnswers("RightAnswer");
 // Can't do this, you'll get a weird compiler error.
-//printStringAnswers("SomeOtherAnswer");
+// printStringAnswers("SomeOtherAnswer");
 console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
 console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 function printAnswer(answer) {

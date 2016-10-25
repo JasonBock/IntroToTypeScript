@@ -1,2 +1,3 @@
-console.log(4 - 4);
-console.log(4 + 4);
+"use strict";
+console.log('4' - 4);
+console.log('4' + 4);
