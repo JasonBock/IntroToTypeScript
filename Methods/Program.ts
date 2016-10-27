@@ -22,6 +22,8 @@ console.log("simpleAnswer: " + simpleAnswer);
 const finalAnswer : any = { answer: 46 };
 // Can't do this:
 // finalAnswer = { answer : 444 };
+// But I can do this:
+finalAnswer.answer = 22;
 finalAnswer.really = 47;
 console.log("finalAnswer.answer: " + finalAnswer.answer);
 console.log("finalAnswer.really: " + finalAnswer.really);

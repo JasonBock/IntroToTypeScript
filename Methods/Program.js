@@ -16,6 +16,7 @@ console.log("simpleAnswer: " + simpleAnswer);
 var finalAnswer = { answer: 46 };
 // Can't do this:
 // finalAnswer = { answer : 444 };
+finalAnswer.answer = 22;
 finalAnswer.really = 47;
 console.log("finalAnswer.answer: " + finalAnswer.answer);
 console.log("finalAnswer.really: " + finalAnswer.really);
@@ -42,6 +43,11 @@ printStringAnswers("WrongAnswer");
 printStringAnswers("RightAnswer");
 // Can't do this, you'll get a weird compiler error.
 // printStringAnswers("SomeOtherAnswer");
+var nonNullValue = "answer";
+// Can't do this when "strictNullChecks": true in tsconfig.json
+// nonNullValue = null;
+var nullOrValue = "answer";
+nullOrValue = null;
 console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
 console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 function printAnswer(answer) {

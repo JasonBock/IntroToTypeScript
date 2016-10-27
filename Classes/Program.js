@@ -9,7 +9,7 @@ var Messages;
 })(Messages || (Messages = {}));
 var TheAnswer = (function () {
     function TheAnswer(value) {
-        this._value = value == null ? 41 : value;
+        this._value = value === undefined ? 41 : value;
     }
     // You can't add this.
     /*

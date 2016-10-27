@@ -10,7 +10,7 @@ class TheAnswer implements IAnswer {
 	protected _value : number;
 	
 	constructor(value? : number) {
-		this._value = value == null ? 41 : value;
+		this._value = value === undefined ? 41 : value;
 	}
 
 	// You can't add this.
@@ -31,6 +31,7 @@ class TheAnswer implements IAnswer {
 
 class TheRealAnswer extends TheAnswer {
 	constructor() {
+		// Have to call "super()" here:
 		super(46);
 	}
 	

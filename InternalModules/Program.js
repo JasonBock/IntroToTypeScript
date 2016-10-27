@@ -22,7 +22,6 @@ var InternalAnswers;
     }());
     InternalAnswers.TheAnswer = TheAnswer;
 })(InternalAnswers || (InternalAnswers = {}));
-/// <reference path="InternalAnswers.ts" />
 var Program = (function () {
     function Program() {
     }
