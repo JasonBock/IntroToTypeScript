@@ -17,7 +17,7 @@ function freezable(target) {
     var newConstructor = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i - 0] = arguments[_i];
+            args[_i] = arguments[_i];
         }
         return Object.freeze(construct(original, args));
     };
@@ -32,11 +32,11 @@ var UnfrozenAnswer = (function () {
 var FrozenAnswer = (function () {
     function FrozenAnswer() {
     }
-    FrozenAnswer = __decorate([
-        freezable
-    ], FrozenAnswer);
     return FrozenAnswer;
 }());
+FrozenAnswer = __decorate([
+    freezable
+], FrozenAnswer);
 var Program = (function () {
     function Program() {
     }

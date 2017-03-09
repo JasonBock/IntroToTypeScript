@@ -51,10 +51,10 @@ class TheOverloadedAnswer {
     state(name : string) : string;
 
 	state(value : boolean | string) {
-        if(typeof value == "boolean") {
+        if(typeof value === "boolean") {
     		return `${this._value}, ${value} - boolean`;
         }
-        else if(typeof value == "string") {
+        else if(typeof value === "string") {
     		return `${this._value}, ${value} - string`;
         }
         else {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var requireAnswers = require("./ExternalAnswers");
 var moduleAnswers = require("./ExternalAnswers");
 var Program = (function () {

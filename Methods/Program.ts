@@ -54,15 +54,18 @@ printStringAnswers("RightAnswer");
 // Can't do this, you'll get a weird compiler error.
 // printStringAnswers("SomeOtherAnswer");
 
-var nonNullValue = "answer";
+let nonNullValue = "answer";
 // Can't do this when "strictNullChecks": true in tsconfig.json
 // nonNullValue = null;
 
-var nullOrValue : string | null = "answer";
+let nullOrValue : string | null = "answer";
 nullOrValue = null;
 
 console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
 console.log("Answers.RightAnswer: " + Answers.RightAnswer);
+
+let tupleAnswer : [string, number] = ["The Answer", 49];
+console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
 
 function printAnswer(answer : number) : void {
     console.log(answer);

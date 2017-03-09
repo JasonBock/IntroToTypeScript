@@ -16,6 +16,7 @@ console.log("simpleAnswer: " + simpleAnswer);
 var finalAnswer = { answer: 46 };
 // Can't do this:
 // finalAnswer = { answer : 444 };
+// But I can do this:
 finalAnswer.answer = 22;
 finalAnswer.really = 47;
 console.log("finalAnswer.answer: " + finalAnswer.answer);
@@ -50,6 +51,8 @@ var nullOrValue = "answer";
 nullOrValue = null;
 console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
 console.log("Answers.RightAnswer: " + Answers.RightAnswer);
+var tupleAnswer = ["The Answer", 49];
+console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
 function printAnswer(answer) {
     console.log(answer);
 }
@@ -76,7 +79,7 @@ printAnswerWithName(48, "Jane");
 function printAnswers() {
     var answers = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        answers[_i - 0] = arguments[_i];
+        answers[_i] = arguments[_i];
     }
     console.log(answers.join(", "));
 }

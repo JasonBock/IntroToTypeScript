@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Messages;
 (function (Messages) {
     Messages.Answer = "The answer is";
@@ -32,7 +37,8 @@ var TheAnswer = (function () {
 var TheRealAnswer = (function (_super) {
     __extends(TheRealAnswer, _super);
     function TheRealAnswer() {
-        _super.call(this, 46);
+        // Have to call "super()" here:
+        return _super.call(this, 46) || this;
     }
     TheRealAnswer.prototype.stateWithName = function (name) {
         return _super.prototype.state.call(this) + ", " + name;
@@ -44,10 +50,10 @@ var TheOverloadedAnswer = (function () {
         this._value = value;
     }
     TheOverloadedAnswer.prototype.state = function (value) {
-        if (typeof value == "boolean") {
+        if (typeof value === "boolean") {
             return this._value + ", " + value + " - boolean";
         }
-        else if (typeof value == "string") {
+        else if (typeof value === "string") {
             return this._value + ", " + value + " - string";
         }
         else {

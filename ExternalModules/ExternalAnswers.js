@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ExternalMessages;
 (function (ExternalMessages) {
     ExternalMessages.Answer = "The external answer is";

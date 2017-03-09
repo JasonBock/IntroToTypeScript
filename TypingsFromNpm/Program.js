@@ -1,6 +1,7 @@
 // npm install moment
 // npm install --save @types/moment
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const moment = require("moment");
 class Program {
     static Main() {
