@@ -66,6 +66,12 @@ console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 
 let tupleAnswer : [string, number] = ["The Answer", 49];
 console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
+let [ stringAnswer, intAnswer ] = tupleAnswer;
+console.log("Destructured tupleAnswer: " + stringAnswer + ", " + intAnswer);
+
+let dynamicAnswer = { answer: 39, name: "Destructure THIS" };
+let { answer: myAnswer } = dynamicAnswer;
+console.log("Destructured dynamicAnswer: " + myAnswer);
 
 function printAnswer(answer : number) : void {
     console.log(answer);
