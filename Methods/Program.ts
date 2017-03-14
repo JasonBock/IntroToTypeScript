@@ -110,3 +110,6 @@ function printAnswers(...answers: number[]) {
 
 console.log("printAnswers(48, 40, 45): ");
 printAnswers(48, 40, 45);
+
+var lambdaAnswer = (value) => console.log("The given answer is " + value);
+lambdaAnswer(444);

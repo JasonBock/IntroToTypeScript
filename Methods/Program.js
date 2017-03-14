@@ -90,4 +90,6 @@ function printAnswers() {
 }
 console.log("printAnswers(48, 40, 45): ");
 printAnswers(48, 40, 45);
+var lambdaAnswer = function (value) { return console.log("The given answer is " + value); };
+lambdaAnswer(444);
 //# sourceMappingURL=Program.js.map
