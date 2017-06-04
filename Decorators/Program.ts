@@ -1,5 +1,3 @@
-"use strict";
-
 function freezable<TFunction extends Function>(target: TFunction) : TFunction {
   let original = target;
 

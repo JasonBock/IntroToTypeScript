@@ -1,5 +1,3 @@
-"use strict";
-
 var theAnswer = 44;
 {
     var theAnswer = 41;
@@ -31,7 +29,8 @@ console.log("finalAnswer.really: " + finalAnswer.really);
 const frozenAnswer = Object.freeze({ answer: 49});
 // Can't do this:
 // frozenAnswer.really = 47;
-// You CAN do this, but it will throw a TypeError at runtime.
+// You can't do this either as of TS 2.1 due to mapped types :)
+// https://blog.mariusschulz.com/2017/01/20/typescript-2-1-mapped-types
 // frozenAnswer.answer = 42;
 console.log("frozenAnswer.answer: " + frozenAnswer.answer);
 
@@ -51,7 +50,7 @@ function printStringAnswers(answer: StringAnswers) {
 
 printStringAnswers("WrongAnswer");
 printStringAnswers("RightAnswer");
-// Can't do this, you'll get a weird compiler error.
+// Can't do this.
 // printStringAnswers("SomeOtherAnswer");
 
 let nonNullValue = "answer";
@@ -111,5 +110,5 @@ function printAnswers(...answers: number[]) {
 console.log("printAnswers(48, 40, 45): ");
 printAnswers(48, 40, 45);
 
-var lambdaAnswer = (value) => console.log("The given answer is " + value);
+let lambdaAnswer = (value) => console.log("The given answer is " + value);
 lambdaAnswer(444);

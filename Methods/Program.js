@@ -1,4 +1,3 @@
-"use strict";
 var theAnswer = 44;
 {
     var theAnswer = 41;
@@ -24,7 +23,8 @@ console.log("finalAnswer.really: " + finalAnswer.really);
 var frozenAnswer = Object.freeze({ answer: 49 });
 // Can't do this:
 // frozenAnswer.really = 47;
-// You CAN do this, but it will throw a TypeError at runtime.
+// You can't do this either as of TS 2.1 due to mapped types :)
+// https://blog.mariusschulz.com/2017/01/20/typescript-2-1-mapped-types
 // frozenAnswer.answer = 42;
 console.log("frozenAnswer.answer: " + frozenAnswer.answer);
 var stringUnionAnswer = "49";
@@ -42,7 +42,7 @@ function printStringAnswers(answer) {
 }
 printStringAnswers("WrongAnswer");
 printStringAnswers("RightAnswer");
-// Can't do this, you'll get a weird compiler error.
+// Can't do this.
 // printStringAnswers("SomeOtherAnswer");
 var nonNullValue = "answer";
 // Can't do this when "strictNullChecks": true in tsconfig.json

@@ -1,5 +1,3 @@
-"use strict";
-
 module Messages {
 	export const Answer = "The answer is";
 }
