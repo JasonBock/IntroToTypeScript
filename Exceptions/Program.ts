@@ -1,5 +1,3 @@
-"use strict";
-
 class EvenError extends Error {
     constructor(message? : string) {
         super(message);

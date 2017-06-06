@@ -42,6 +42,9 @@ let numberUnionAnswer : UnionAnswer = 49;
 
 enum Answers { WrongAnswer = 42, RightAnswer };
 
+console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
+console.log("Answers.RightAnswer: " + Answers.RightAnswer);
+
 type StringAnswers = "WrongAnswer" | "RightAnswer";
                        
 function printStringAnswers(answer: StringAnswers) {
@@ -59,9 +62,6 @@ let nonNullValue = "answer";
 
 let nullOrValue : string | null = "answer";
 nullOrValue = null;
-
-console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
-console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 
 let tupleAnswer : [string, number] = ["The Answer", 49];
 console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
@@ -110,5 +110,5 @@ function printAnswers(...answers: number[]) {
 console.log("printAnswers(48, 40, 45): ");
 printAnswers(48, 40, 45);
 
-let lambdaAnswer = (value) => console.log("The given answer is " + value);
+let lambdaAnswer = (value : any) => console.log("The given answer is " + value);
 lambdaAnswer(444);

@@ -1,3 +1,4 @@
+"use strict";
 var theAnswer = 44;
 {
     var theAnswer = 41;
@@ -37,6 +38,8 @@ var Answers;
     Answers[Answers["RightAnswer"] = 43] = "RightAnswer";
 })(Answers || (Answers = {}));
 ;
+console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
+console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 function printStringAnswers(answer) {
     console.log(answer);
 }
@@ -49,8 +52,6 @@ var nonNullValue = "answer";
 // nonNullValue = null;
 var nullOrValue = "answer";
 nullOrValue = null;
-console.log("Answers.WrongAnswer: " + Answers.WrongAnswer);
-console.log("Answers.RightAnswer: " + Answers.RightAnswer);
 var tupleAnswer = ["The Answer", 49];
 console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
 var stringAnswer = tupleAnswer[0], intAnswer = tupleAnswer[1];

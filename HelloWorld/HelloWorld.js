@@ -2,9 +2,8 @@ var Program = (function () {
     function Program() {
     }
     Program.Main = function () {
-        console.log("Hello World");
+        console.log("Hello PrDC17");
     };
     return Program;
 }());
 Program.Main();
-//# sourceMappingURL=HelloWorld.js.map

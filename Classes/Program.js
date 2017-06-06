@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -37,9 +38,14 @@ var TheAnswer = (function () {
 var TheRealAnswer = (function (_super) {
     __extends(TheRealAnswer, _super);
     function TheRealAnswer() {
-        // Have to call "super()" here:
-        return _super.call(this, 46) || this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
+    /*
+    constructor() {
+        // Have to call "super()" here:
+        super(46);
+    }
+    */
     TheRealAnswer.prototype.stateWithName = function (name) {
         return _super.prototype.state.call(this) + ", " + name;
     };

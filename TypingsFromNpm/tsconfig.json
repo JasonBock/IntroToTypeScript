@@ -3,9 +3,10 @@
         "declaration": true,
         "target": "es6",
         "module": "commonjs",
-        "sourceMap": true
+        "sourceMap": true,
+        "strict": true
     },
     "files": [
-        "Program.ts"
+        "MomentInTime.ts", "Program.ts"
     ]
 }

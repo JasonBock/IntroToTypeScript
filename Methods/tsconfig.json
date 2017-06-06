@@ -3,7 +3,7 @@
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true,
-        "strictNullChecks": true
+        "strict": true
    },
     "files": [
         "Program.ts"

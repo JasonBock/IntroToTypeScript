@@ -12,10 +12,16 @@ class GenericAnswer<T> implements IAnswer<T> {
     state() : string {
         return `Your generic answer is ${this._value}`;
     }
-    
+
     get Value() : T {
         return this._value;    
-    }        
+    } 
+}
+
+class ConstraintedAnswer<T extends number> extends GenericAnswer<T> {
+    state() : string {
+        return `Your constrained answer is ${this.Value}`;
+    }
 }
 
 class RandomAnswer implements IAnswer<number> {
@@ -34,13 +40,19 @@ class NumberAnswer extends GenericAnswer<number> { }
 
 class Program {
     public static Main() : void {
-        var stringAnswer = new GenericAnswer<string>("44");
+        let stringAnswer = new GenericAnswer<string>("44");
         Program.PrintAnswer(stringAnswer);
         
-        var numberAnswer = new NumberAnswer(43);
+        let constraintedAnswer = new ConstraintedAnswer(47);
+        Program.PrintAnswer(constraintedAnswer);
+
+        // Can't do this:
+        // let constrainedStringAnswer = new ConstraintedAnswer("47");
+
+        let numberAnswer = new NumberAnswer(43);
         Program.PrintAnswer(numberAnswer);
                 
-        var newAnswer = Program.CreateNewAnswer(RandomAnswer);
+        let newAnswer = Program.CreateNewAnswer(RandomAnswer);
         console.log(newAnswer.Value);
         
         // Can't do this - no no-arg constructor:
@@ -50,7 +62,7 @@ class Program {
         // Program.PrintAnswer(newAnswer);
     }
     
-    private static CreateNewAnswer<T>(a : {new(): IAnswer<T>}) : IAnswer<T> {
+    private static CreateNewAnswer<T>(a : new() => IAnswer<T>) : IAnswer<T> {
         return new a();
     }
     
