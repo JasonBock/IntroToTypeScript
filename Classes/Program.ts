@@ -113,7 +113,7 @@ class Program {
         console.log(realAnswer.stateWithName("Jason"));
 
         // Intellisense picks up the overload
-        let overloadedAnswer = new TheOverloadedAnswer(40);
+		let overloadedAnswer = new TheOverloadedAnswer(40);
         console.log(overloadedAnswer.state(true));
         console.log(overloadedAnswer.state("Jason"));
         let mixedAnswer = new TheMixedAnswer();

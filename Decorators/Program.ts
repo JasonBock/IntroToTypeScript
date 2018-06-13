@@ -1,15 +1,15 @@
 function freezable<TFunction extends Function>(target: TFunction) : TFunction {
   let original = target;
 
-  function construct(constructor, args) {
-    let c : any = function () {
+  function construct(constructor: TFunction, args: any[]) {
+    let c : any = function (this: Function) {
       return constructor.apply(this, args);
     }
     c.prototype = constructor.prototype;
     return new c();
   }
 
-  let newConstructor : any = function(...args) {
+  let newConstructor : any = function(...args: any[]) {
     return Object.freeze(construct(original, args));
   }
 

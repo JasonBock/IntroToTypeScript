@@ -57,7 +57,8 @@ printStringAnswers("RightAnswer");
 // printStringAnswers("SomeOtherAnswer");
 
 let nonNullValue = "answer";
-// Can't do this when "strictNullChecks": true in tsconfig.json
+// Can't do this when "strictNullChecks": true in tsconfig.json,
+// or just set "strict" to true.
 // nonNullValue = null;
 
 let nullOrValue : string | null = "answer";

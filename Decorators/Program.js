@@ -24,20 +24,20 @@ function freezable(target) {
     newConstructor.prototype = original.prototype;
     return newConstructor;
 }
-var UnfrozenAnswer = (function () {
+var UnfrozenAnswer = /** @class */ (function () {
     function UnfrozenAnswer() {
     }
     return UnfrozenAnswer;
 }());
-var FrozenAnswer = (function () {
+var FrozenAnswer = /** @class */ (function () {
     function FrozenAnswer() {
     }
+    FrozenAnswer = __decorate([
+        freezable
+    ], FrozenAnswer);
     return FrozenAnswer;
 }());
-FrozenAnswer = __decorate([
-    freezable
-], FrozenAnswer);
-var Program = (function () {
+var Program = /** @class */ (function () {
     function Program() {
     }
     Program.Main = function () {

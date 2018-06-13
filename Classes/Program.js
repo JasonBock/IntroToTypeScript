@@ -13,7 +13,7 @@ var Messages;
 (function (Messages) {
     Messages.Answer = "The answer is";
 })(Messages || (Messages = {}));
-var TheAnswer = (function () {
+var TheAnswer = /** @class */ (function () {
     function TheAnswer(value) {
         this._value = value === undefined ? 41 : value;
     }
@@ -35,23 +35,18 @@ var TheAnswer = (function () {
     });
     return TheAnswer;
 }());
-var TheRealAnswer = (function (_super) {
+var TheRealAnswer = /** @class */ (function (_super) {
     __extends(TheRealAnswer, _super);
     function TheRealAnswer() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /*
-    constructor() {
         // Have to call "super()" here:
-        super(46);
+        return _super.call(this, 46) || this;
     }
-    */
     TheRealAnswer.prototype.stateWithName = function (name) {
         return _super.prototype.state.call(this) + ", " + name;
     };
     return TheRealAnswer;
 }(TheAnswer));
-var TheOverloadedAnswer = (function () {
+var TheOverloadedAnswer = /** @class */ (function () {
     function TheOverloadedAnswer(value) {
         this._value = value;
     }
@@ -68,7 +63,7 @@ var TheOverloadedAnswer = (function () {
     };
     return TheOverloadedAnswer;
 }());
-var TheRandomAnswer = (function () {
+var TheRandomAnswer = /** @class */ (function () {
     function TheRandomAnswer() {
         this._randomValue = Math.random();
     }
@@ -77,7 +72,7 @@ var TheRandomAnswer = (function () {
     };
     return TheRandomAnswer;
 }());
-var TheNegativeAnswer = (function () {
+var TheNegativeAnswer = /** @class */ (function () {
     function TheNegativeAnswer() {
         this._negativeValue = -1;
     }
@@ -86,7 +81,7 @@ var TheNegativeAnswer = (function () {
     };
     return TheNegativeAnswer;
 }());
-var TheMixedAnswer = (function () {
+var TheMixedAnswer = /** @class */ (function () {
     function TheMixedAnswer() {
         this._randomValue = Math.random() * -1;
         this._negativeValue = this._randomValue;
@@ -96,7 +91,7 @@ var TheMixedAnswer = (function () {
     };
     return TheMixedAnswer;
 }());
-var Program = (function () {
+var Program = /** @class */ (function () {
     function Program() {
     }
     Program.Main = function () {

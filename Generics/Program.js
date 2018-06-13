@@ -8,7 +8,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var GenericAnswer = (function () {
+var GenericAnswer = /** @class */ (function () {
     function GenericAnswer(value) {
         this._value = value;
     }
@@ -24,7 +24,7 @@ var GenericAnswer = (function () {
     });
     return GenericAnswer;
 }());
-var ConstraintedAnswer = (function (_super) {
+var ConstraintedAnswer = /** @class */ (function (_super) {
     __extends(ConstraintedAnswer, _super);
     function ConstraintedAnswer() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -34,7 +34,7 @@ var ConstraintedAnswer = (function (_super) {
     };
     return ConstraintedAnswer;
 }(GenericAnswer));
-var RandomAnswer = (function () {
+var RandomAnswer = /** @class */ (function () {
     function RandomAnswer() {
         this._value = Math.random();
     }
@@ -47,14 +47,14 @@ var RandomAnswer = (function () {
     });
     return RandomAnswer;
 }());
-var NumberAnswer = (function (_super) {
+var NumberAnswer = /** @class */ (function (_super) {
     __extends(NumberAnswer, _super);
     function NumberAnswer() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return NumberAnswer;
 }(GenericAnswer));
-var Program = (function () {
+var Program = /** @class */ (function () {
     function Program() {
     }
     Program.Main = function () {
@@ -70,11 +70,17 @@ var Program = (function () {
         console.log(newAnswer.Value);
         // Can't do this - no no-arg constructor:
         // Program.CreateNewAnswer(NumberAnswer);
+        // But I could do this:
+        var answerWithValue = Program.CreateNewAnswerWithValue(NumberAnswer, 22);
+        console.log("answerWithValue.Value is " + answerWithValue.Value);
         // Or this:
         // Program.PrintAnswer(newAnswer);
     };
     Program.CreateNewAnswer = function (a) {
         return new a();
+    };
+    Program.CreateNewAnswerWithValue = function (a, value) {
+        return new a(value);
     };
     Program.PrintAnswer = function (answer) {
         console.log(answer.state());

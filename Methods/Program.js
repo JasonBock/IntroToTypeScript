@@ -48,7 +48,8 @@ printStringAnswers("RightAnswer");
 // Can't do this.
 // printStringAnswers("SomeOtherAnswer");
 var nonNullValue = "answer";
-// Can't do this when "strictNullChecks": true in tsconfig.json
+// Can't do this when "strictNullChecks": true in tsconfig.json,
+// or just set "strict" to true.
 // nonNullValue = null;
 var nullOrValue = "answer";
 nullOrValue = null;

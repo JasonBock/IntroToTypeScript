@@ -1,9 +1,11 @@
-var Program = (function () {
+"use strict";
+var Program = /** @class */ (function () {
     function Program() {
     }
     Program.Main = function () {
-        console.log("Hello PrDC17");
+        console.log("Hello World");
     };
     return Program;
 }());
 Program.Main();
+//# sourceMappingURL=HelloWorld.js.map

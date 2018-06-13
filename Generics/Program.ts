@@ -57,7 +57,11 @@ class Program {
         
         // Can't do this - no no-arg constructor:
         // Program.CreateNewAnswer(NumberAnswer);
-        
+
+        // But I could do this:
+        // var answerWithValue = Program.CreateNewAnswerWithValue(NumberAnswer, 22);
+        // console.log(`answerWithValue.Value is ${answerWithValue.Value}`);
+
         // Or this:
         // Program.PrintAnswer(newAnswer);
     }
@@ -66,6 +70,10 @@ class Program {
         return new a();
     }
     
+    private static CreateNewAnswerWithValue<T>(a : new(v : T) => IAnswer<T>, value : T) : IAnswer<T> {
+        return new a(value);
+    }
+
     private static PrintAnswer<T>(answer : GenericAnswer<T>) : T {
         console.log(answer.state());
         return answer.Value;
