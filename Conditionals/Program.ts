@@ -21,8 +21,10 @@ class Program {
 				readonly [P in NonFunctionPropertyNames<T>]: DeepReadonly<T[P]>;
 		};
 
+		type ReadOnlyStringArray = DeepReadonly<string[]>;
+		type ReadOnlyString = DeepReadonly<string>;
 		type ReadonlyPart = DeepReadonly<Part>;
-		
+
 		let readonlyPart = (part: DeepReadonly<Part>) => {
 			let name: string = part.name;
 			let id: number = part.subparts[0].id;
