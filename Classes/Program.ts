@@ -8,7 +8,7 @@ interface IAnswer {
 
 class TheAnswer implements IAnswer {
 	protected _value : number;
-	
+
 	constructor(value? : number) {
 		this._value = value === undefined ? 41 : value;
 	}
@@ -29,6 +29,22 @@ class TheAnswer implements IAnswer {
 	}
 }
 
+class TheReadonlyAnswer {
+	private readonly _value : number;
+
+	constructor() {
+		this._value = Math.random();
+	}
+
+	get value() {
+		return this._value;
+	}
+	// This isn't allowed.
+	//set value(value : number) {
+	//	this._value = value;
+	//}
+}
+
 class TheRealAnswer extends TheAnswer {
 	constructor() {
 		// Have to call "super()" here:
@@ -44,22 +60,22 @@ class TheOverloadedAnswer {
 	protected _value : number;
 
 	constructor(value : number) {
-        this._value = value;
+      this._value = value;
 	}
 	
-    state(isGood : boolean) : string;
-    state(name : string) : string;
+	state(isGood : boolean) : string;
+	state(name : string) : string;
 
 	state(value : boolean | string) {
-        if(typeof value === "boolean") {
-    		return `${this._value}, ${value} - boolean`;
-        }
-        else if(typeof value === "string") {
-    		return `${this._value}, ${value} - string`;
-        }
-        else {
-            throw new Error("Unsupported type.");
-        }
+		if(typeof value === "boolean") {
+			return `${this._value}, ${value} - boolean`;
+		}
+		else if(typeof value === "string") {
+			return `${this._value}, ${value} - string`;
+		}
+		else {
+			throw new Error("Unsupported type.");
+		}
 	}
 }
 
@@ -88,12 +104,12 @@ class TheNegativeAnswer {
 }
 
 class TheMixedAnswer implements TheRandomAnswer, TheNegativeAnswer {
-    _negativeValue : number;
-    _randomValue : number;
+	_negativeValue : number;
+	_randomValue : number;
 	
 	constructor() {
 		this._randomValue = Math.random() * -1;
-        this._negativeValue = this._randomValue;
+      this._negativeValue = this._randomValue;
 	}
 
 	state() {
@@ -102,23 +118,23 @@ class TheMixedAnswer implements TheRandomAnswer, TheNegativeAnswer {
 }
 
 class Program {
-    public static Main() {
-        let answer = new TheAnswer();
-        console.log(answer.state());
+	public static Main() {
+		let answer = new TheAnswer();
+		console.log(answer.state());
 
-        let myAnswer = new TheAnswer(43);
-        console.log(myAnswer.state());
+		let myAnswer = new TheAnswer(43);
+		console.log(myAnswer.state());
 
-        let realAnswer = new TheRealAnswer();
-        console.log(realAnswer.stateWithName("Jason"));
+		let realAnswer = new TheRealAnswer();
+		console.log(realAnswer.stateWithName("Jason"));
 
-        // Intellisense picks up the overload
+		// Intellisense picks up the overload
 		let overloadedAnswer = new TheOverloadedAnswer(40);
-        console.log(overloadedAnswer.state(true));
-        console.log(overloadedAnswer.state("Jason"));
-        let mixedAnswer = new TheMixedAnswer();
-        console.log(mixedAnswer.state());
-    }    
+		console.log(overloadedAnswer.state(true));
+		console.log(overloadedAnswer.state("Jason"));
+		let mixedAnswer = new TheMixedAnswer();
+		console.log(mixedAnswer.state());
+	}    
 }
 
 Program.Main();

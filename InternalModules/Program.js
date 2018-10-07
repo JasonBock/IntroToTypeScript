@@ -4,7 +4,7 @@ var InternalMessages;
 })(InternalMessages || (InternalMessages = {}));
 var InternalAnswers;
 (function (InternalAnswers) {
-    var TheAnswer = (function () {
+    var TheAnswer = /** @class */ (function () {
         function TheAnswer(value) {
             this._value = value == null ? 41 : value;
         }
@@ -22,7 +22,8 @@ var InternalAnswers;
     }());
     InternalAnswers.TheAnswer = TheAnswer;
 })(InternalAnswers || (InternalAnswers = {}));
-var Program = (function () {
+/// <reference path="InternalAnswers.ts" />
+var Program = /** @class */ (function () {
     function Program() {
     }
     Program.Main = function () {

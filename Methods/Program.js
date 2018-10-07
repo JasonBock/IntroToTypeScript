@@ -30,7 +30,8 @@ var frozenAnswer = Object.freeze({ answer: 49 });
 console.log("frozenAnswer.answer: " + frozenAnswer.answer);
 var stringUnionAnswer = "49";
 var numberUnionAnswer = 49;
-// Can't do this
+// Can't do these
+// let dateUnionAnswer : UnionAnswer = new Date(2001, 1, 1);
 // let arrayUnionAnswer : UnionAnswer = { answer : 49 };
 var Answers;
 (function (Answers) {
@@ -52,7 +53,10 @@ var nonNullValue = "answer";
 // or just set "strict" to true.
 // nonNullValue = null;
 var nullOrValue = "answer";
+// console.log(nullOrValue.length);
 nullOrValue = null;
+// The "non-null assertion operator"
+// console.log(nullOrValue!.length);
 var tupleAnswer = ["The Answer", 49];
 console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
 var stringAnswer = tupleAnswer[0], intAnswer = tupleAnswer[1];
@@ -72,9 +76,12 @@ console.log("printStructuredAnswer(finalAnswer): ");
 printStructuredAnswer(finalAnswer);
 console.log("printStructuredAnswer(frozenAnswer): ");
 printStructuredAnswer(frozenAnswer);
+var nominalAnswer = { answer: 22, name: "name" };
+console.log("printStructuredAnswer(nominalAnswer): ");
+printStructuredAnswer(nominalAnswer);
 // Can't do this:
 // console.log("printStructuredAnswer({anser: 44}): ");
-// printStructuredAnswer({anser: 44});
+printStructuredAnswer({ answer: 44 });
 function printAnswerWithName(answer, name) {
     if (name === void 0) { name = "Joe"; }
     console.log(answer + ", " + name);

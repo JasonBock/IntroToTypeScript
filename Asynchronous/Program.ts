@@ -10,14 +10,14 @@ class TheAsynchronousAnswer {
 	}
 
 	async state() {
-        await this.delay(2000);
+		await this.delay(2000);
 		return `${Messages.Answer} ${this._value}`;
 	}	
 	
     private delay(milliseconds: number) {
-        return new Promise(resolve => {
-            setTimeout(resolve, milliseconds);
-        });
+		return new Promise(resolve => {
+			setTimeout(resolve, milliseconds);
+		});
     }
 
 	get value() {

@@ -37,7 +37,8 @@ console.log("frozenAnswer.answer: " + frozenAnswer.answer);
 type UnionAnswer = string | number;
 let stringUnionAnswer : UnionAnswer = "49";
 let numberUnionAnswer : UnionAnswer = 49;
-// Can't do this
+// Can't do these
+// let dateUnionAnswer : UnionAnswer = new Date(2001, 1, 1);
 // let arrayUnionAnswer : UnionAnswer = { answer : 49 };
 
 enum Answers { WrongAnswer = 42, RightAnswer };
@@ -62,7 +63,10 @@ let nonNullValue = "answer";
 // nonNullValue = null;
 
 let nullOrValue : string | null = "answer";
+// console.log(nullOrValue.length);
 nullOrValue = null;
+// The "non-null assertion operator"
+// console.log(nullOrValue!.length);
 
 let tupleAnswer : [string, number] = ["The Answer", 49];
 console.log("tupleAnswer: " + tupleAnswer[0] + ", " + tupleAnswer[1]);
@@ -90,9 +94,13 @@ printStructuredAnswer(finalAnswer);
 console.log("printStructuredAnswer(frozenAnswer): ");
 printStructuredAnswer(frozenAnswer);
 
+let nominalAnswer = {answer: 22, name: "name"};
+console.log("printStructuredAnswer(nominalAnswer): ");
+printStructuredAnswer(nominalAnswer);
+
 // Can't do this:
 // console.log("printStructuredAnswer({anser: 44}): ");
-// printStructuredAnswer({anser: 44});
+printStructuredAnswer({answer: 44});
 
 function printAnswerWithName(answer: number, name = "Joe") {
     console.log(`${answer}, ${name}`);    
@@ -111,5 +119,5 @@ function printAnswers(...answers: number[]) {
 console.log("printAnswers(48, 40, 45): ");
 printAnswers(48, 40, 45);
 
-let lambdaAnswer = (value : any) => console.log("The given answer is " + value);
+let lambdaAnswer = (value : number) => console.log("The given answer is " + value);
 lambdaAnswer(444);

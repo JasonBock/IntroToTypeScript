@@ -5,6 +5,15 @@ interface Part {
 	updatePart(newName: string): void;
 }
 
+class CustomPart implements Part {
+	id: number;	
+	name: string;
+	subparts: Part[];
+	updatePart(newName: string): void {
+		this.name = newName;
+	}
+}
+
 class Program {
 	public static Main() : void {
 		type NonFunctionPropertyNames<T> = { [K in keyof T]: T[K] extends Function ? never : K }[keyof T];
@@ -25,14 +34,25 @@ class Program {
 		type ReadOnlyString = DeepReadonly<string>;
 		type ReadonlyPart = DeepReadonly<Part>;
 
-		let readonlyPart = (part: DeepReadonly<Part>) => {
+		let analyzePart = (part: DeepReadonly<Part>) => {
 			let name: string = part.name;
-			let id: number = part.subparts[0].id;
-			part.id = part.id;  // Error
-			part.subparts[0] = part.subparts[0];  // Error
-			part.subparts[0].id = part.subparts[0].id;  // Error
-			part.updatePart("hello");  // Error
-	  	};
+			let id = part.id;
+			console.log(`name is ${name}, id is ${id}`);
+
+			// this is OK:
+			//let id2: number = part.subparts[0].id;
+			//part.id = part.id;  // Error
+			//part.subparts[0] = part.subparts[0];  // Error
+			//part.subparts[0].id = part.subparts[0].id;  // Error
+			//part.updatePart("hello");  // Error
+		};
+		  
+		let custom = new CustomPart();
+		custom.id = 33;
+		custom.name = "custom";
+		analyzePart(custom);
+		custom.updatePart("new custom");
+		analyzePart(custom);
 	}
 }
 
